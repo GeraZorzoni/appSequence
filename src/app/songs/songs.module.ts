@@ -3,12 +3,10 @@ import { CommonModule } from '@angular/common';
 
 import { SongsRoutingModule } from './songs-routing.module';
 
+import { ListPageComponent } from './pages/list-page/list-page.component';
 
 @NgModule({
-  declarations: [],
-  imports: [
-    CommonModule,
-    SongsRoutingModule
-  ]
+  declarations: [ListPageComponent],
+  imports: [CommonModule, SongsRoutingModule],
 })
-export class SongsModule { }
+export class SongsModule {}
