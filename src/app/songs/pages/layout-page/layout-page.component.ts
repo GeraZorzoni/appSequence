@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class LayoutPageComponent {
   public sidebarItems = [
-    { label: 'Listado canciones', icon: 'Label', url: './list' },
+    { label: 'Listado canciones', icon: 'label', url: './list' },
     { label: 'Añadir', icon: 'add', url: './new-song' },
     { label: 'Buscar', icon: 'search', url: './search' },
   ];
