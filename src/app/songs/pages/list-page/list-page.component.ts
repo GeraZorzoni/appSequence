@@ -1,17 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { Song } from '../../interfaces/song.interfaces';
-import { SongsService } from '../../services/songs.service';
+import { Component } from '@angular/core';
 
 @Component({
+  selector: 'app-list-page',
   templateUrl: './list-page.component.html',
-  styles: ``,
+  styles: ``
 })
-export class ListPageComponent implements OnInit {
-  public songs: Song[] = [];
+export class ListPageComponent {
 
-  constructor(private songsService: SongsService) {}
-
-  ngOnInit(): void {
-    this.songsService.getSongs().subscribe((songs) => (this.songs = songs));
-  }
 }
