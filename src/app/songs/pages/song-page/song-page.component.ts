@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { switchMap } from 'rxjs';
+import { delay, switchMap } from 'rxjs';
 
 import { SongsService } from '../../services/songs.service';
 import { Song } from '../../interfaces/song.interfaces';
@@ -21,12 +21,19 @@ export class SongPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.activatedRoute.params
-      .pipe(switchMap(({ id }) => this.songsService.getSongById(id)))
+      .pipe(
+        delay(1000),
+        switchMap(({ id }) => this.songsService.getSongById(id))
+      )
       .subscribe((song) => {
         if (!song) return this.router.navigate(['./songs/list']);
 
         this.song = song;
         return;
       });
+  }
+
+  goBack(): void {
+    this.router.navigateByUrl('/songs/list');
   }
 }
