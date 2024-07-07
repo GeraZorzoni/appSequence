@@ -3,7 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { LayoutPageComponent } from './pages/layout-page/layout-page.component';
 import { NewPageComponent } from './pages/new-page/new-page.component';
-import { SearchPageComponent } from './pages/search-page/search-page.component';
 import { ListPageComponent } from './pages/list-page/list-page.component';
 import { SongPageComponent } from './pages/song-page/song-page.component';
 
@@ -16,10 +15,7 @@ const routes: Routes = [
         path: 'new-song',
         component: NewPageComponent,
       },
-      {
-        path: 'search',
-        component: SearchPageComponent,
-      },
+
       {
         path: 'edit/:id',
         component: NewPageComponent,

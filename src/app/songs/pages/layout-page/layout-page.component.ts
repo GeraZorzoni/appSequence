@@ -11,6 +11,5 @@ export class LayoutPageComponent {
     { label: 'Artistas', icon: 'label', url: './list' },
     { label: 'Compañias Discograficas', icon: 'label', url: './list' },
     { label: 'Añadir', icon: 'add', url: './new-song' },
-    { label: 'Buscar', icon: 'search', url: './search' },
   ];
 }
