@@ -14,11 +14,9 @@ export class SongsService {
     return this.http.get<Song[]>(`${this.baseUrl}/songs`);
   }
 
-  getHeroById(id: string): Observable<Song | undefined> {
-    return this.http.get<Song>(`${this.baseUrl}/songs/${id}`)
-    .pipe(
-      catchError( error => of (undefined))
-
-    );
+  getSongById(id: string): Observable<Song | undefined> {
+    return this.http
+      .get<Song>(`${this.baseUrl}/songs/${id}`)
+      .pipe(catchError((error) => of(undefined)));
   }
 }
