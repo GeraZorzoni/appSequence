@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { catchError, Observable, of } from 'rxjs';
 import { Song } from '../interfaces/song.interfaces';
 import { environments } from '../../../environments/environments';
 
@@ -12,5 +12,13 @@ export class SongsService {
 
   getSongs(): Observable<Song[]> {
     return this.http.get<Song[]>(`${this.baseUrl}/songs`);
+  }
+
+  getHeroById(id: string): Observable<Song | undefined> {
+    return this.http.get<Song>(`${this.baseUrl}/songs/${id}`)
+    .pipe(
+      catchError( error => of (undefined))
+
+    );
   }
 }
