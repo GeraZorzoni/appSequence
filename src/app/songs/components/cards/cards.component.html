@@ -1,0 +1,38 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>{{ song.title }}({{ song.artist }})</mat-card-title>
+  </mat-card-header>
+
+  <img mat-card-image src="{{ song.poster }}" alt="poster" />
+
+  <mat-card-content class="mt-2">
+    <mat-chip-listbox>
+      <mat-chip
+        *ngFor="let genre of song.genre.toString().split(',') | slice : 0 - 3"
+      >
+        {{ genre }}</mat-chip
+      >
+    </mat-chip-listbox>
+  </mat-card-content>
+
+  <mat-divider></mat-divider>
+
+  <mat-card-actions>
+    <button
+      mat-button
+      mat-raise
+      color="primary"
+      [routerLink]="['/songs/edit', song.id]"
+    >
+      <mat-icon>edit</mat-icon>
+      Editar
+    </button>
+
+    <span class="spacer"></span>
+
+    <button mat-button mat-raise [routerLink]="['/songs', song.id]">
+      <mat-icon>more_horizon</mat-icon>
+      mas
+    </button>
+  </mat-card-actions>
+</mat-card>

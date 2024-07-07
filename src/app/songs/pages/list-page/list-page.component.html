@@ -1,5 +1,9 @@
-<ul>
-  <li *ngFor="let song of songs">
-    {{ song.title }}
-  </li>
-</ul>
+<h1>Listado de Canciones</h1>
+
+<mat-divider></mat-divider>
+
+<div class="grid bm-8 pt-2">
+  <div *ngFor="let song of songs" class="col-12 sm:col-4 md:col-3 xl:col-2">
+    <songs-song-card [song]="song"></songs-song-card>
+  </div>
+</div>
