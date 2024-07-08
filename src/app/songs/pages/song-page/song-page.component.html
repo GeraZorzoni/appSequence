@@ -13,7 +13,17 @@
       <mat-card-subtitle>Artista: {{ song.artist }} </mat-card-subtitle>
     </mat-card-header>
 
-    <img [src]="song.poster" [alt]="song.title" />
+    <!-- <img [src]="song.poster" [alt]="song.title" /> -->
+
+    <img
+      *ngIf="song.poster; else noImage"
+      mat-card-image
+      [src]="song.poster"
+      alt="song.title"
+    />
+    <ng-template #noImage>
+      <img mat-card-image src="assets/no-image.png" alt="poster" />
+    </ng-template>
   </mat-card>
 
   <mat-card class="col-12 sm:col-6">
