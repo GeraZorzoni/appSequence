@@ -4,6 +4,8 @@ import { NgModule } from '@angular/core';
 import { MaterialModule } from '../material/material.module';
 import { SongsRoutingModule } from './songs-routing.module';
 
+import { CardsArtistsComponent } from './components/cards-artists/cards-artists.component';
+import { CardsCompaniesComponent } from './components/cards-companies/cards-companies.component';
 import { CardsComponent } from './components/cards/cards.component';
 import { LayoutPageComponent } from './pages/layout-page/layout-page.component';
 import { ListPageArtistComponent } from './pages/list-page-artist/list-page-artist.component';
@@ -14,6 +16,8 @@ import { SongPageComponent } from './pages/song-page/song-page.component';
 
 @NgModule({
   declarations: [
+    CardsArtistsComponent,
+    CardsCompaniesComponent,
     CardsComponent,
     LayoutPageComponent,
     ListPageArtistComponent,

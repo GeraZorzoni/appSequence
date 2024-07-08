@@ -19,11 +19,11 @@ export class SongsService {
   }
 
   getArtist(): Observable<Artist[]> {
-    return this.http.get<Artist[]>(`${this.baseUrl}/companies`);
+    return this.http.get<Artist[]>(`${this.baseUrl}/artists`);
   }
 
   getCompany(): Observable<Company[]> {
-    return this.http.get<Company[]>(`${this.baseUrl}/artist`);
+    return this.http.get<Company[]>(`${this.baseUrl}/companies`);
   }
 
   getSongById(id: string): Observable<Song | undefined> {

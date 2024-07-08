@@ -2,8 +2,9 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { LayoutPageComponent } from './pages/layout-page/layout-page.component';
-import { NewPageComponent } from './pages/new-page/new-page.component';
+import { ListPageArtistComponent } from './pages/list-page-artist/list-page-artist.component';
 import { ListPageComponent } from './pages/list-page/list-page.component';
+import { NewPageComponent } from './pages/new-page/new-page.component';
 import { SongPageComponent } from './pages/song-page/song-page.component';
 
 const routes: Routes = [
@@ -15,7 +16,10 @@ const routes: Routes = [
         path: 'new-song',
         component: NewPageComponent,
       },
-
+      {
+        path: 'artist',
+        component: ListPageArtistComponent,
+      },
       {
         path: 'edit/:id',
         component: NewPageComponent,

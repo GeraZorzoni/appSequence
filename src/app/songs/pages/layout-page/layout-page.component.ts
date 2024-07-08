@@ -8,8 +8,8 @@ import { Component } from '@angular/core';
 export class LayoutPageComponent {
   public sidebarItems = [
     { label: 'Canciones', icon: 'label', url: './list' },
-    { label: 'Artistas', icon: 'label', url: './list' },
-    { label: 'Compañias Discograficas', icon: 'label', url: './list' },
+    { label: 'Artistas', icon: 'label', url: './artist' },
+    { label: 'Compañias Discograficas', icon: 'label', url: './companies' },
     { label: 'Añadir', icon: 'add', url: './new-song' },
   ];
 }
