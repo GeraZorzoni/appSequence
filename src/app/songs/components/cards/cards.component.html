@@ -7,9 +7,7 @@
 
   <mat-card-content class="mt-2">
     <mat-chip-listbox>
-      <mat-chip
-        *ngFor="let genre of song.genre.toString().split(',') | slice : 0 - 3"
-      >
+      <mat-chip *ngFor="let genre of song.genre.toString().split(',')">
         {{ genre }}</mat-chip
       >
     </mat-chip-listbox>

@@ -1,1 +1,76 @@
-<p>new-page works!</p>
+<h1>Edit / Agregar Cancion Cancion</h1>
+<small>Cancion generica</small>
+
+<mat-divider class="mb-2"></mat-divider>
+
+<mat-card>
+  <mat-card-content>
+    <div class="grid">
+      <mat-form-field class="col-12 sm:col-6">
+        <mat-label>Titulo</mat-label>
+        <input matInput type="text" required />
+      </mat-form-field>
+    </div>
+  </mat-card-content>
+
+  <mat-card-content>
+    <div class="grid">
+      <mat-form-field class="col-12 sm:col-6">
+        <mat-label>Genero</mat-label>
+
+        <mat-select required="">
+          <mat-option *ngFor="let genre of genres" [value]="genre.id">
+            {{ genre.desc }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </mat-card-content>
+
+  <mat-card-content>
+    <div class="grid">
+      <mat-form-field class="col-12 sm:col-6">
+        <mat-label>Año</mat-label>
+        <input matInput type="number" required />
+      </mat-form-field>
+    </div>
+  </mat-card-content>
+
+  <mat-card-content>
+    <div class="grid">
+      <mat-form-field class="col-12 sm:col-6">
+        <mat-label>Duracion</mat-label>
+        <input matInput type="number" required />
+      </mat-form-field>
+    </div>
+  </mat-card-content>
+
+  <mat-card-content>
+    <div class="grid">
+      <mat-form-field class="col-12 sm:col-6">
+        <mat-label>Rating</mat-label>
+        <input matInput type="number" required />
+      </mat-form-field>
+    </div>
+  </mat-card-content>
+
+  <mat-card-content>
+    <div class="grid">
+      <mat-form-field class="col-12 sm:col-6">
+        <mat-label>Artista</mat-label>
+        <input matInput type="text" required />
+      </mat-form-field>
+    </div>
+
+    <div class="flex justify-content-between sm:col-6">
+      <button mat-flat-button color="warn">Borrar</button>
+
+      <button mat-flat-button color="primary">
+        <mat-icon>save</mat-icon>
+        Guardar
+      </button>
+    </div>
+  </mat-card-content>
+</mat-card>
+
+<div class="col-12 sm-col-6"></div>

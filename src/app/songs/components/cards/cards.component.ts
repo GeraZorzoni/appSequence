@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Song } from '../../interfaces/song.interfaces';
+import { Song } from '../../interfaces/song.interface';
 
 @Component({
   selector: 'songs-song-card',
