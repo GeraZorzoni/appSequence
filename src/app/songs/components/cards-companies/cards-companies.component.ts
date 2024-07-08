@@ -1,10 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Company } from '../../interfaces/company.interface';
 
 @Component({
-  selector: 'app-cards-companies',
+  selector: 'song-cards-companies',
   templateUrl: './cards-companies.component.html',
-  styles: ``
+  styles: ``,
 })
-export class CardsCompaniesComponent {
+export class CardsCompaniesComponent implements OnInit {
+  @Input()
+  public company!: Company;
 
+  ngOnInit(): void {
+    if (!this.company) throw Error('artist property is required');
+  }
 }
