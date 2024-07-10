@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { forkJoin } from 'rxjs';
+import { delay, forkJoin } from 'rxjs';
 
 import { SongsService } from '../../services/songs.service';
 
@@ -19,19 +19,18 @@ export class ListPageComponent implements OnInit {
 
   constructor(private songsService: SongsService) {}
 
-  // ngOnInit(): void {
-  //   this.songsService.getSongs().subscribe((songs) => (this.songs = songs));
-  // }
-
   ngOnInit(): void {
     this.loadSongs();
   }
 
   loadSongs(): void {
-    this.songsService.getSongs().subscribe((songs) => {
-      this.songs = songs;
-      this.loadArtistForSongs(songs);
-    });
+    this.songsService
+      .getSongs()
+      .pipe(delay(1000))
+      .subscribe((songs) => {
+        this.songs = songs;
+        this.loadArtistForSongs(songs);
+      });
   }
 
   loadArtistForSongs(songs: Song[]): void {

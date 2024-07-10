@@ -3,7 +3,7 @@
 <mat-divider></mat-divider>
 
 <div class="grid bm-8 pt-2">
-  <div *ngFor="let song of songs" class="col-12 sm:col-4 md:col-3 xl:col-2">
+  <div *ngFor="let song of songs" class="col-12 sm:col-4 md:col-3 xl:col-2 w8">
     <songs-song-card
       [song]="song"
       [artist]="getArtistById(song.artist)"
