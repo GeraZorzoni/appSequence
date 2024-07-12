@@ -16,6 +16,7 @@ export class ListPageComponent implements OnInit {
   public songs: Song[] = [];
   public artists: { [id: number]: Artist | undefined } = {};
   public company: Company[] = [];
+  public isLoading: boolean = true;
 
   constructor(private songsService: SongsService) {}
 
@@ -42,6 +43,7 @@ export class ListPageComponent implements OnInit {
       songs.forEach((song, index) => {
         this.artists[song.artist] = artists[index];
       });
+      this.isLoading = false;
     });
   }
 
