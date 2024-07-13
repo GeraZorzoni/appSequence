@@ -38,12 +38,11 @@
 
     <mat-card-content>
       <mat-card-title>Compañia Discografica</mat-card-title>
-      <!-- <mat-list>
-        <mat-list-item> {{ song.year }} </mat-list-item>
-        <mat-list-item> {{ song.genre }} </mat-list-item>
-        <mat-list-item> {{ song.rating }} </mat-list-item>
-        <mat-list-item> {{ song.duration }} </mat-list-item>
-      </mat-list> -->
+      <mat-card-content class="mt-2">
+        <mat-chip-listbox>
+          <mat-chip> {{ company?.name }}</mat-chip>
+        </mat-chip-listbox>
+      </mat-card-content>
 
       <button mat-button color="warn" (click)="goBack()">Regresar</button>
     </mat-card-content>
