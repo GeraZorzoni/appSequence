@@ -37,12 +37,14 @@ export class SongsService {
       .get<Artist>(`${this.baseUrl}/artists/${id}`)
       .pipe(catchError((error) => of(undefined)));
   }
+
   getCompanyBySongId(songId: number): Observable<Company | undefined> {
     return this.getCompany().pipe(
       map((companies) => {
-        return companies.find((company) =>
+        const company = companies.find((company) =>
           company.songs.includes(Number(songId))
         );
+        return company ? company : undefined;
       }),
       catchError((error) => {
         return of(undefined);

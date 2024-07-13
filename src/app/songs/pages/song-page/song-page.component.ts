@@ -16,7 +16,8 @@ import { Company } from '../../interfaces/company.interface';
 export class SongPageComponent implements OnInit {
   public song?: Song;
   public artist?: Artist;
-  public company?: Company;
+  public companies: Company[] = [];
+  public noCompanyInfoText: string = '(No information)';
 
   constructor(
     private songsService: SongsService,
@@ -32,7 +33,6 @@ export class SongPageComponent implements OnInit {
           forkJoin({
             song: this.songsService.getSongById(id).pipe(
               catchError(() => {
-                console.error('Error fetching song');
                 return of(undefined);
               })
             ),
@@ -43,7 +43,6 @@ export class SongPageComponent implements OnInit {
                 }
                 return this.songsService.getArtistById(song.artist).pipe(
                   catchError(() => {
-                    console.error('Error fetching artist');
                     return of(undefined);
                   })
                 );
@@ -59,7 +58,6 @@ export class SongPageComponent implements OnInit {
 
                   .pipe(
                     catchError(() => {
-                      console.error('Error fetching company');
                       return of(undefined);
                     })
                   );
@@ -69,13 +67,17 @@ export class SongPageComponent implements OnInit {
         )
       )
       .subscribe(({ song, artist, company }) => {
-        if (!song || !artist || !company) {
+        if (!song || !artist) {
           this.router.navigate(['./song/list']);
           return;
         }
         this.song = song;
         this.artist = artist;
-        this.company = company;
+        if (company) {
+          this.companies = [company];
+        } else {
+          this.companies = [];
+        }
       });
   }
 

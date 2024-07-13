@@ -39,9 +39,15 @@
     <mat-card-content>
       <mat-card-title>Compañia Discografica</mat-card-title>
       <mat-card-content class="mt-2">
-        <mat-chip-listbox>
-          <mat-chip> {{ company?.name }}</mat-chip>
-        </mat-chip-listbox>
+        <ng-container *ngIf="companies.length > 0; else noCompanyInfo">
+          <mat-chip *ngFor="let company of companies">
+            {{ company.name }}
+          </mat-chip>
+        </ng-container>
+
+        <ng-template #noCompanyInfo>
+          <mat-chip>{{ noCompanyInfoText }}</mat-chip>
+        </ng-template>
       </mat-card-content>
 
       <button mat-button color="warn" (click)="goBack()">Regresar</button>
