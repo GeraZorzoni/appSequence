@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { catchError, Observable, of } from 'rxjs';
+import { catchError, map, Observable, of } from 'rxjs';
 
 import { environments } from '../../../environments/environments';
 
@@ -26,9 +26,29 @@ export class SongsService {
     return this.http.get<Company[]>(`${this.baseUrl}/companies`);
   }
 
-  getSongById(id: string): Observable<Song | undefined> {
+  getSongById(id: number): Observable<Song | undefined> {
     return this.http
       .get<Song>(`${this.baseUrl}/songs/${id}`)
       .pipe(catchError((error) => of(undefined)));
+  }
+
+  getArtistById(id: number): Observable<Artist | undefined> {
+    return this.http
+      .get<Artist>(`${this.baseUrl}/artists/${id}`)
+      .pipe(catchError((error) => of(undefined)));
+  }
+
+  getCompanyBySongId(songId: number): Observable<Company | undefined> {
+    return this.getCompany().pipe(
+      map((companies) => {
+        const company = companies.find((company) =>
+          company.songs.includes(Number(songId))
+        );
+        return company ? company : undefined;
+      }),
+      catchError((error) => {
+        return of(undefined);
+      })
+    );
   }
 }

@@ -10,6 +10,6 @@ export class LayoutPageComponent {
     { label: 'Canciones', icon: 'label', url: './list' },
     { label: 'Artistas', icon: 'label', url: './artist' },
     { label: 'Compañias Discograficas', icon: 'label', url: './companies' },
-    { label: 'Añadir', icon: 'add', url: './new-song' },
+    { label: 'Añadir Cancion', icon: 'add', url: './new-song' },
   ];
 }

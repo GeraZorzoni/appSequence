@@ -9,10 +9,10 @@ export class NewPageComponent {
   // Todo funcion de agregar genero
   public genres = [
     { id: 1, desc: 'Rock' },
-    { id: 1, desc: 'Pop' },
-    { id: 1, desc: 'Alternative' },
-    { id: 1, desc: 'Heavy' },
-    { id: 1, desc: 'Chill' },
-    { id: 1, desc: 'Blues' },
+    { id: 2, desc: 'Pop' },
+    { id: 3, desc: 'Alternative' },
+    { id: 4, desc: 'Heavy' },
+    { id: 5, desc: 'Chill' },
+    { id: 6, desc: 'Blues' },
   ];
 }
