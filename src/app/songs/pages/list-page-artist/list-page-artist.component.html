@@ -1,8 +1,16 @@
-<h1>Listado de Artistas</h1>
+<h1>{{ "Listado de Artistas" | translate }}</h1>
 
 <mat-divider></mat-divider>
 
-<div class="grid bm-8 pt-2">
+<ng-template #divLoading>
+  <mat-grid-list cols="2">
+    <mat-grid-tile>
+      <mat-spinner></mat-spinner>
+    </mat-grid-tile>
+  </mat-grid-list>
+</ng-template>
+
+<div *ngIf="!isLoading; else divLoading" class="grid bm-8 pt-2">
   <div *ngFor="let artist of artists" class="col-12 sm:col-4 md:col-3 xl:col-2">
     <song-cards-artists [artist]="artist"></song-cards-artists>
   </div>

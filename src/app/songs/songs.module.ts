@@ -1,5 +1,9 @@
 import { CommonModule } from '@angular/common';
+import { HttpClient } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { HttpLoaderFactory } from '../app.module';
 
 import { MaterialModule } from '../material/material.module';
 import { SongsRoutingModule } from './songs-routing.module';
@@ -26,6 +30,18 @@ import { SongPageComponent } from './pages/song-page/song-page.component';
     NewPageComponent,
     SongPageComponent,
   ],
-  imports: [CommonModule, MaterialModule, SongsRoutingModule],
+  imports: [
+    CommonModule,
+    MaterialModule,
+    SongsRoutingModule,
+    TranslateModule.forChild({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient],
+      },
+    }),
+  ],
+  exports: [TranslateModule],
 })
 export class SongsModule {}

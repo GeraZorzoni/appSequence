@@ -25,14 +25,14 @@
       [routerLink]="['/songs/edit', song.id]"
     >
       <mat-icon>edit</mat-icon>
-      Editar
+      {{ "Editar" | translate }}
     </button>
 
     <span class="spacer"></span>
 
     <button mat-button mat-raise [routerLink]="['/songs', song.id]">
       <mat-icon>more_horizon</mat-icon>
-      mas
+      {{ "Mas" | translate }}
     </button>
   </mat-card-actions>
 </mat-card>

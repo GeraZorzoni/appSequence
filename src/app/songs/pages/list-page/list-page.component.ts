@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { delay, forkJoin } from 'rxjs';
+import { TranslateService } from '@ngx-translate/core';
 
 import { SongsService } from '../../services/songs.service';
 
@@ -18,7 +19,12 @@ export class ListPageComponent implements OnInit {
   public company: Company[] = [];
   public isLoading: boolean = true;
 
-  constructor(private songsService: SongsService) {}
+  constructor(
+    private songsService: SongsService,
+    private translate: TranslateService
+  ) {
+    translate.setDefaultLang('es');
+  }
 
   ngOnInit(): void {
     this.loadSongs();

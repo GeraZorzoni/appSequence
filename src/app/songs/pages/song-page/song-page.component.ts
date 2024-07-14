@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { catchError, delay, forkJoin, of, switchMap } from 'rxjs';
 
+import { TranslateService } from '@ngx-translate/core';
+
 import { SongsService } from '../../services/songs.service';
 
 import { Song } from '../../interfaces/song.interface';
@@ -22,8 +24,11 @@ export class SongPageComponent implements OnInit {
   constructor(
     private songsService: SongsService,
     private activatedRoute: ActivatedRoute,
-    private router: Router
-  ) {}
+    private router: Router,
+    private translate: TranslateService
+  ) {
+    translate.setDefaultLang('es');
+  }
 
   ngOnInit(): void {
     this.activatedRoute.params
