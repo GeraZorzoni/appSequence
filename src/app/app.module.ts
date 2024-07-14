@@ -22,7 +22,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     HttpClientModule,
     SharedModule,
     TranslateModule.forRoot({
-      defaultLanguage: 'es', // Idioma predeterminado
+      defaultLanguage: 'es',
       loader: {
         provide: TranslateLoader,
         useFactory: HttpLoaderFactory,

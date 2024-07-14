@@ -15,7 +15,7 @@
         (click)="sidenav.toggle()"
       >
         <mat-icon matListItemIcon>{{ item.icon }}</mat-icon>
-        {{ item.label }}
+        {{ item.label | translate }}
       </mat-list-item>
     </mat-nav-list>
   </mat-sidenav>
@@ -26,6 +26,23 @@
     </button>
 
     <span class="spacer"></span>
+
+    <div>
+      <button
+        mat-raised-button
+        class="mr-10 m-2"
+        (click)="switchLanguage('es')"
+      >
+        Español
+      </button>
+      <button
+        mat-raised-button
+        class="mr-10 m-2"
+        (click)="switchLanguage('en')"
+      >
+        English
+      </button>
+    </div>
   </mat-toolbar>
 
   <div class="container p-2">

@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 import { Song } from '../../interfaces/song.interface';
 import { Artist } from '../../interfaces/artist.interface';
@@ -18,6 +19,10 @@ export class CardsComponent implements OnInit {
 
   @Input()
   public company?: Company;
+
+  constructor(private translate: TranslateService) {
+    translate.setDefaultLang('es');
+  }
 
   ngOnInit(): void {}
 }
