@@ -1,10 +1,18 @@
 <mat-card>
   <mat-card-header>
     <mat-card-title>{{ company.name }}</mat-card-title>
-    <mat-card-subtitle>Pais: {{ company.country }} </mat-card-subtitle>
-    <mat-card-subtitle>Creacion: {{ company.createYear }}</mat-card-subtitle>
-    <mat-card-subtitle>Rating: {{ company.rating }}</mat-card-subtitle>
-    <mat-card-subtitle>Empleados: {{ company.employees }}</mat-card-subtitle>
+    <mat-card-subtitle
+      >{{ "Pais" | translate }} {{ company.country }}
+    </mat-card-subtitle>
+    <mat-card-subtitle
+      >{{ "Creacion" | translate }} {{ company.createYear }}</mat-card-subtitle
+    >
+    <mat-card-subtitle
+      >{{ "Rating" | translate }} {{ company.rating }}</mat-card-subtitle
+    >
+    <mat-card-subtitle
+      >{{ "Empleados" | translate }} {{ company.employees }}</mat-card-subtitle
+    >
   </mat-card-header>
 
   <mat-divider></mat-divider>

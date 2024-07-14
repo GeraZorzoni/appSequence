@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Artist } from '../../interfaces/artist.interface';
-import { SongsService } from '../../services/songs.service';
 import { delay } from 'rxjs';
+
+import { TranslateService } from '@ngx-translate/core';
+
+import { SongsService } from '../../services/songs.service';
+import { Artist } from '../../interfaces/artist.interface';
 
 @Component({
   selector: 'list-page-artist',
@@ -12,7 +15,12 @@ export class ListPageArtistComponent implements OnInit {
   public artists: Artist[] = [];
   public isLoading: boolean = true;
 
-  constructor(private songsService: SongsService) {}
+  constructor(
+    private songsService: SongsService,
+    private translate: TranslateService
+  ) {
+    translate.setDefaultLang('es');
+  }
 
   ngOnInit(): void {
     this.loadArtists();

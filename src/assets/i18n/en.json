@@ -5,9 +5,18 @@
     "COMPANIES": "Record Companies",
     "NEW_SONG": "Add Song"
   },
-  "Editar": "Edit",
-  "Mas": "More",
-  "Genero": "Gender",
+  "Ciudad": "City",
   "Compañia Discografica": "Record Company",
-  "Regresar": "Go back"
+  "Editar": "Edit",
+  "Fecha Nac": "Date of birth",
+  "Genero": "Gender",
+  "Listado de Artistas": "Artist List",
+  "Listado de Canciones": "Song List",
+  "Listado de Companias": "Companies List",
+  "Mas": "More",
+  "Rating": "Rating",
+  "Regresar": "Go back",
+  "Pais": "Country",
+  "Creacion": "Created",
+  "Empleados": "Employees"
 }
